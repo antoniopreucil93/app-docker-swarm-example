@@ -1,6 +1,6 @@
 # Docker swarm example for Nestjs
 
- - simple example of how to deploy nestjs application with postgres on nginx server with help of docker swarm orchestration tool.
+ - Example of how to deploy simple nestjs app, postgres database and nginx server with help of docker swarm orchestration tool.
 
 ## Images
 
