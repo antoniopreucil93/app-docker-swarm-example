@@ -2,10 +2,10 @@
 
  - simple example of how to deploy nestjs application with postgres on nginx server with help of docker swarm orchestration tool.
 
-# Images
+## Images
 
  - For building custom nginx image enter into nginx directoy and run following command: docker build -t nginx-server .
- - For building nestjs app image in root direcoty run the following command: docker build -t api .
+ - For building nestjs app image in root direcoty run the following command: docker build -t nest-test .
 
 
 ## Running the app
