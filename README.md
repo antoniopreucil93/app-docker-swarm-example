@@ -12,3 +12,7 @@
 
  1. First step is to run command:  docker swarm init (This command will initialize swarm mode on machine)
  2. After swarm initialization run docker compose file with command: docker stack deploy --compose-file docker-compose.yml ${stack-name}
+
+## Notice
+
+ - If you want to run app with docker compose instead of docker swarm you have to change network from overlay to bridge inside docker-compose file.
