@@ -1,0 +1,39 @@
+version: '3.7'
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_USER: root
+      POSTGRES_DB: nest_docker
+    volumes:
+      - ~/backup/postgres:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    networks:
+      - n-test
+  api:
+    image: nest-test
+    environment:
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_USER: root
+      POSTGRES_DB: nest_docker
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+    depends_on:
+      - 'db'
+    ports:
+      - '4000:3000'
+    networks:
+      - n-test
+  nginx-server:
+    image: nginx-test
+    depends_on:
+      - api
+    ports:
+      - '8080:80'
+    networks:
+      - n-test
+networks:
+  n-test:
+    driver: overlay
