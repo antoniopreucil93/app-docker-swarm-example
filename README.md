@@ -4,5 +4,5 @@
 
 ## Running the app
 
- - docker swarm init
- - docker stack deploy --compose-file docker-compose.yml ${service-name}
+ 1. First step is to run command:  docker swarm init (This command will initialize swarm mode on machine)
+ 2. After swarm initialization run docker compose file with command: docker stack deploy --compose-file docker-compose.yml ${stack-name}
