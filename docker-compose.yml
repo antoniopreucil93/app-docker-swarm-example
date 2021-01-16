@@ -22,14 +22,13 @@ services:
       POSTGRES_PORT: 5432
     depends_on:
       - 'db'
+      - 'nginx-server'
     ports:
       - '4000:3000'
     networks:
       - n-test
   nginx-server:
     image: nginx-test
-    depends_on:
-      - api
     ports:
       - '8080:80'
     networks:
